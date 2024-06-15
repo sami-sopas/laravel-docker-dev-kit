@@ -23,4 +23,34 @@ This is a simple docker development kit for Laravel projects. It includes a Ngin
 
 - `docker compose up -d`
 
+# Notes
 
+## App
+
+- **URL:** http://localhost:8080
+
+## MySql
+
+- **Server:** db
+- **Port:** 3306
+- **Username:** Depends on .env file
+- **Password:** Depends on .env file
+- **Database:** Depends on .env file
+
+# Basic docker commands
+
+- `docker compose up -d` - Create and start the containers
+- `docker compose build` - Build or rebuild services
+- `docker compose down` - Stop and remove containers and networks (Data is preserved)
+- `docker compose stop` - Stop all services
+- `docker compose restart` - Restart containers
+- `docker compose exec <container> <command>` - Run a command in a specific container
+
+# Common commands in development
+
+- **Access the App container:** Here you can run php artisan, composer, npm, git etc. 
+  - `docker compose exec php bash` 
+
+- **Access the MySql container:** Here you can run mysql commands.
+  - `docker compose exec db bash`
+  - `mysql -u <username> -p <password>`
