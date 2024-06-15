@@ -23,7 +23,7 @@ This is a simple docker development kit for Laravel projects. It includes a Ngin
 
 - `docker compose up -d`
 
-# Notes
+# About
 
 ## App
 
@@ -54,3 +54,15 @@ This is a simple docker development kit for Laravel projects. It includes a Ngin
 - **Access the MySql container:** Here you can run mysql commands.
   - `docker compose exec db bash`
   - `mysql -u <username> -p <password>`
+
+# Notes
+
+- The `docker-compose.yml` file is configured to use the `.env` file in the root directory. Make sure to update the `.env` file with the correct values.
+
+- To ensure data preservation, it is stored in the `.docker/db/data` directory. Deleting the information in this directory will reset the database.
+
+- If you have a `.sql file` that you want to import to the database, you can copy the file to the `.docker/db/backups` directory and run the following command:
+  - `docker compose exec db bash`
+  - `mysql -u <username> -p <password> <database> < /var/backups/<filename>.sql`
+  
+- The MySQL port is exposed to the host machine, allowing you to use a client like DBeaver to connect to the database.
