@@ -12,11 +12,10 @@ This is a simple docker development kit for Laravel projects. It includes a Ngin
 
 - `git clone https://github.com/sami-sopas/laravel-docker-dev-kit.git`
 - `docker compose up -d --build`
-- `docker compose exec phpmyadmin chmod 777 /sessions`
 - `docker compose exec php bash`
 - `chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache`
 - `chmod -R 775 /var/www/storage /var/www/bootstrap/cache`
-- `composer setup`
+- `composer install`
 - `npm install`
 
 ## Second time onwards
